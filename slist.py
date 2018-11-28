@@ -8,10 +8,8 @@ class SList:
         self.head = None
     def add_to_front(self, val):
         new_node = Node(val)
-        current_head = self.head
-        new_node.next = current_head
+        new_node.next = self.head
         self.head = new_node
-        return self
     def print_values(self):
         runner = self.head
         while (runner != None):
@@ -25,7 +23,8 @@ class SList:
         runner.next = new_node
         return self
     def remove_from_front(self):
-        self.head = self.head.next
+        if self.head != None:
+            self.head = self.head.next
         return self
     def remove_from_back(self):
         runner = self.head
